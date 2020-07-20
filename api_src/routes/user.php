@@ -3,9 +3,6 @@
     use Psr\Http\Message\ResponseInterface as Response;
     use Psr\Http\Message\ServerRequestInterface as Request;
 
-    $return = [];
-    $return['status'] = 0;
-
     $app->get('/check_device/{device_id}', function (Request $request, Response $response, array $args) {
         global $db, $return;
         $device_id = @$args['device_id'];

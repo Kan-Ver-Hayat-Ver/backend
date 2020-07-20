@@ -1,11 +1,16 @@
 <?php
 
-$db = new DB();
-$host = $_SERVER['HTTP_HOST'];
-$key = getallheaders()['API_KEY'];
-$db = $db->connect();
+    $key = @getallheaders()['API_KEY'];
 
-$query = $db->query("SELECT * FROM authorize WHERE host = '$host' AND `key` = '$key'")->fetch(PDO::FETCH_OBJ);
-if (!$query) { die(); }
+    $query = $db->prepare("SELECT * FROM settings WHERE setting = 'api_key' AND val = ?");
+    $query->execute([$key]);
+
+    if (!$query->rowCount()) {
+        echo json_encode([
+            'status' => 0,
+            'msg' => 'API authentication failed.'
+        ]);
+        exit;
+    }
 
 ?>

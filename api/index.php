@@ -16,6 +16,12 @@
     $errorMiddleware = $app->addErrorMiddleware(true, true, true);
     $app->setBasePath('/backend/api');
 
+    $return = [];
+    $return['status'] = 0;
+
+    #Functions
+    require __DIR__ . '/../api_src/functions/authorize.php';
+
     #Routes
     require __DIR__ . '/../api_src/routes/user.php';
 
