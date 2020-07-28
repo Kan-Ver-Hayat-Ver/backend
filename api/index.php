@@ -13,7 +13,7 @@
     $db = $db->connect();
 
     $app = AppFactory::create();
-    $errorMiddleware = $app->addErrorMiddleware(true, true, true);
+    $errorMiddleware = $app->addErrorMiddleware(1, 1, 1);
     $app->setBasePath('/backend/api');
 
     $return = [];

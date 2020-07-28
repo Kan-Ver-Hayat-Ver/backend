@@ -1,6 +1,6 @@
 <?php
 
-    $key = @getallheaders()['API_KEY'];
+    $key = @getallheaders()['api_key_secret'];
 
     $query = $db->prepare("SELECT * FROM settings WHERE setting = 'api_key' AND val = ?");
     $query->execute([$key]);
