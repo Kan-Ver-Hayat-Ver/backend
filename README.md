@@ -67,7 +67,7 @@ curl --location --request POST 'https://api.kanverhayatver.org/register/3' \
 ### POST - Kullanıcı Detayı
 Yeni kullanıcı kaydı oluşturulduktan sonra kullanıcının konum bilgileri `/register_details/{device_id}` bağlantısına gönderilmelidir.
 ```curl
-curl --location --request POST 'http://localhost/backend/api/register_details/15' \
+curl --location --request POST 'https://api.kanverhayatver.org/register_details/15' \
 --header 'api_key_secret: 1111' \
 --form 'province=İstanbul' \
 --form 'district=Şişli' \
