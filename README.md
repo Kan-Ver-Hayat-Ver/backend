@@ -1,6 +1,6 @@
 # Kan Ver Hayat Ver API v1.0
 #### API Kimlik Doğrulama
-_Kan Ver Hayat Ver API_ hizmetini kullanabilmek için `api_key_secret` header bilgisinin her API çağrısında gönderilmesi gerekir.
+Kan Ver Hayat Ver API hizmetini kullanabilmek için `api_key_secret` header bilgisinin her API çağrısında gönderilmesi gerekir.
 ##### Örnek:
 ```curl
 curl --location --request GET 'https://api.kanverhayatver.org/check_device/1' \
@@ -31,7 +31,7 @@ gönderilerek eğer daha önce kayıt olmuşsa kullanıcıya ilişkin detaylı b
 Yeni kullanıcı kaydı oluşturmak için `/register/{device_id}` bağlantısına kullanıcının doldurduğu bilgileri göndermeniz gerekir.
 ##### Örnek:
 ```curl
-curl --location --request POST 'http://localhost/backend/api/register/3' \
+curl --location --request POST 'https://api.kanverhayatver.org/register/3' \
 --header 'api_key_secret: 1111' \
 --form 'identity_number=12427827548' \
 --form 'name=sercan' \
@@ -47,13 +47,14 @@ curl --location --request POST 'http://localhost/backend/api/register/3' \
     "msg": "User created"
 }
 ```
-##### Olası Hatalar:
+##### Kullanıcı Zaten Kayıtlıysa:
 ```json
 {
     "status": 0,
     "msg": "User already exists"
 }
 ```
+##### Eksik Parametre:
 ```json
 {
     "errorInfo": [
@@ -61,5 +62,30 @@ curl --location --request POST 'http://localhost/backend/api/register/3' \
         1048,
         "Column 'identity_number' cannot be null"
     ]
+}
+```
+### POST - Kullanıcı Detayı
+Yeni kullanıcı kaydı oluşturulduktan sonra kullanıcının konum bilgileri `/register_details/{device_id}` bağlantısına gönderilmelidir.
+```curl
+curl --location --request POST 'http://localhost/backend/api/register_details/15' \
+--header 'api_key_secret: 1111' \
+--form 'province=İstanbul' \
+--form 'district=Şişli' \
+--form 'neighborhood=Yayla Sok.' \
+--form 'latitude=41.0550272' \
+--form 'longitude=28.9538047999999997'
+```
+##### Çıktı:
+```json
+{
+    "status": 1,
+    "msg": "Update sucessful"
+}
+```
+##### Kullanıcı Yoksa:
+```json
+{
+    "status": 0,
+    "msg": "User not exists"
 }
 ```
