@@ -37,11 +37,12 @@
         $query->execute([@$args['device_id']]);
 
         if (!$query->rowCount()) {
-            $query = $db->prepare('INSERT INTO users SET identity_number = ?, `name` = ?, surname = ?, phone_number = ?, reg_ip = ?, reg_date = ?');
+            $query = $db->prepare('INSERT INTO users SET identity_number = ?, `name` = ?, surname = ?, blood_type = ?, phone_number = ?, reg_ip = ?, reg_date = ?');
             $insert = $query->execute([
                 @$req_data['identity_number'],
                 @$req_data['name'],
                 @$req_data['surname'],
+                @$req_data['blood_type'],
                 @$req_data['phone_number'],
                 @$req_data['reg_ip'],
                 @$req_data['reg_date']

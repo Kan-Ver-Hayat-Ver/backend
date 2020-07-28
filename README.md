@@ -29,6 +29,18 @@ gönderilerek eğer daha önce kayıt olmuşsa kullanıcıya ilişkin detaylı b
 ```
 ### POST - Yeni Kullanıcı Kayıt Oluşturma
 Yeni kullanıcı kaydı oluşturmak için `/register/{device_id}` bağlantısına kullanıcının doldurduğu bilgileri göndermeniz gerekir.
+
+##### Kan Grupları:
+| blood_type | Kan Grubu |
+| ------------- | ------------- |
+| 1  | A Rh+  |
+| 2  | A Rh-  |
+| 3  | B Rh+  |
+| 4  | B Rh-  |
+| 5  | AB Rh+  |
+| 6  | AB Rh-  |
+| 7  | O Rh+  |
+| 8  | O Rh-  |
 ##### Örnek:
 ```curl
 curl --location --request POST 'https://api.kanverhayatver.org/register/3' \
@@ -36,6 +48,7 @@ curl --location --request POST 'https://api.kanverhayatver.org/register/3' \
 --form 'identity_number=12427827548' \
 --form 'name=sercan' \
 --form 'surname=arga' \
+--form 'blood_type=2' \
 --form 'phone_number=5071773757' \
 --form 'reg_ip=255.255.255.255' \
 --form 'reg_date=2020-07-10 19:57:03'
