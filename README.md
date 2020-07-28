@@ -32,11 +32,11 @@ Yeni kullanıcı kaydı oluşturmak için `/register/{device_id}` bağlantısın
 
 ##### Kan Grupları:
 | blood_type | Kan Grubu |  blood_type | Kan Grubu |
-| :---:  | ------------- | :---:  | ------------- |
-| 1  | A Rh+  |  2  | A Rh-  |
-| 3  | B Rh+  | 4  | B Rh-  |
-| 5  | AB Rh+  | 6  | AB Rh-  |
-| 7  | O Rh+  |      8  | O Rh-  |
+| :---:  | ------------- | :---: | ------------- |
+| **1**  | A Rh+  |  **2**  | A Rh- |
+| **3**  | B Rh+  | **4**  | B Rh- |
+| **5**  | AB Rh+  | **6**  | AB Rh- |
+| **7**  | O Rh+  | **8**  | O Rh-  |
 ##### Örnek:
 ```curl
 curl --location --request POST 'https://api.kanverhayatver.org/register/3' \
