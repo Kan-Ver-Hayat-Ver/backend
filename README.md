@@ -1,10 +1,10 @@
 # Kan Ver Hayat Ver API v1.0
 #### API Kimlik Doğrulama
-Kan Ver Hayat Ver API hizmetini kullanabilmek için `api_key_secret` header bilgisinin her API çağrısında gönderilmesi gerekir.
+Kan Ver Hayat Ver API hizmetini kullanabilmek için `Api-Secret-Key` header bilgisinin her API çağrısında gönderilmesi gerekir.
 ##### Örnek:
 ```curl
 curl --location --request GET 'https://api.kanverhayatver.org/check_device/1' \
---header 'api_key_secret: 1111'
+--header 'Api-Secret-Key: 1111'
 ```
 #### GET - Kullanıcı Kayıt Doğrulama
 Kullanıcı uygulamayı indirdiğinde `/check_device/{device_id}` bağlantısına ``device_id``
@@ -40,7 +40,7 @@ Yeni kullanıcı kaydı oluşturmak için `/register/{device_id}` bağlantısın
 ##### Örnek:
 ```curl
 curl --location --request POST 'https://api.kanverhayatver.org/register/3' \
---header 'api_key_secret: 1111' \
+--header 'Api-Secret-Key: 1111' \
 --form 'identity_number=12427827548' \
 --form 'name=sercan' \
 --form 'surname=arga' \
@@ -77,7 +77,7 @@ curl --location --request POST 'https://api.kanverhayatver.org/register/3' \
 Yeni kullanıcı kaydı oluşturulduktan sonra kullanıcının konum bilgileri `/register_details/{device_id}` bağlantısına gönderilmelidir.
 ```curl
 curl --location --request POST 'https://api.kanverhayatver.org/register_details/15' \
---header 'api_key_secret: 1111' \
+--header 'Api-Secret-Key: 1111' \
 --form 'province=İstanbul' \
 --form 'district=Şişli' \
 --form 'neighborhood=Yayla Sok.' \
