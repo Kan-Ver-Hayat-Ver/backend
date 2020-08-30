@@ -46,6 +46,7 @@ curl --location --request POST 'https://api.kanverhayatver.org/register/3' \
 --form 'surname=arga' \
 --form 'blood_type=2' \
 --form 'phone_number=5071773757' \
+--form 'device_agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36' \
 --form 'reg_ip=255.255.255.255' \
 --form 'reg_date=2020-07-10 19:57:03'
 ```
