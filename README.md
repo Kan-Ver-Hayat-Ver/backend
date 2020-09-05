@@ -119,4 +119,42 @@ curl --location --request POST 'https://api.kanverhayatver.org/donate_register/3
     "msg": "User not exists"
 }
 ```
-
+#### GET - Son 50 Bağışı Listeleme
+Son 50 bağışın listelenmesi için `/last_donations` bağlantısına istek göndermelisiniz.
+```curl
+curl --location --request GET 'http://api.kanverhayatver.org/last_donations' \
+--header 'Api-Secret-Key: 1111'
+```
+##### Örnek:
+```json
+{
+    "status": 1,
+    "data": [
+        {
+            "user_id": "1",
+            "donation_value": "120.00",
+            "date": "2020-09-05 18:55:32"
+        },
+        {
+            "user_id": "3",
+            "donation_value": "80.00",
+            "date": "2020-09-05 18:55:21"
+        },
+        {
+            "user_id": "3",
+            "donation_value": "40.00",
+            "date": "2020-09-05 18:55:16"
+        },
+        {
+            "user_id": "2",
+            "donation_value": "40.00",
+            "date": "2020-09-05 18:55:11"
+        },
+        {
+            "user_id": "1",
+            "donation_value": "20.00",
+            "date": "2020-09-05 13:53:34"
+        }
+    ]
+}
+```
