@@ -97,3 +97,26 @@ curl --location --request POST 'https://api.kanverhayatver.org/register_details/
     "msg": "User not exists"
 }
 ```
+### POST - Bağış Oluşturma
+Kullanıcı bağış yaptığında bunu kaydetmek için `/donate_register/{user_id}` bağlantısı kullanılmalıdır.
+```curl
+curl --location --request POST 'https://api.kanverhayatver.org/donate_register/3' \
+--header 'Api-Secret-Key: 1111' \
+--form 'donation_value=20' \
+--form 'invoice_number=1111'
+```
+##### Çıktı:
+```json
+{
+    "status": 1,
+    "msg": "Donation created"
+}
+```
+##### Kullanıcı Yoksa:
+```json
+{
+    "status": 0,
+    "msg": "User not exists"
+}
+```
+
