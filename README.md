@@ -119,7 +119,7 @@ curl --location --request POST 'https://api.kanverhayatver.org/donate_register/3
     "msg": "User not exists"
 }
 ```
-#### GET - Son 50 Bağışı Listeleme
+### GET - Son 50 Bağışı Listeleme
 Son 50 bağışın listelenmesi için `/last_donations` bağlantısına istek göndermelisiniz.
 ```curl
 curl --location --request GET 'http://api.kanverhayatver.org/last_donations' \
