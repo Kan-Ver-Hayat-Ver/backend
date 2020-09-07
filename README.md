@@ -133,27 +133,77 @@ curl --location --request GET 'http://api.kanverhayatver.org/last_donations' \
         {
             "user_id": "1",
             "donation_value": "120.00",
-            "date": "2020-09-05 18:55:32"
+            "date": "2020-09-05 18:55:32",
+            "0": {
+                "user_info": {
+                    "name": "asdasdas",
+                    "surname": "asdasdas",
+                    "blood_type": "0",
+                    "phone_number": "111111",
+                    "device_agent": "",
+                    "status": "1"
+                }
+            }
         },
         {
             "user_id": "3",
             "donation_value": "80.00",
-            "date": "2020-09-05 18:55:21"
+            "date": "2020-09-05 18:55:21",
+            "0": {
+                "user_info": {
+                    "name": "sercann",
+                    "surname": "argaaa",
+                    "blood_type": "0",
+                    "phone_number": "2147483647",
+                    "device_agent": "",
+                    "status": "1"
+                }
+            }
         },
         {
             "user_id": "3",
             "donation_value": "40.00",
-            "date": "2020-09-05 18:55:16"
+            "date": "2020-09-05 18:55:16",
+            "0": {
+                "user_info": {
+                    "name": "sercann",
+                    "surname": "argaaa",
+                    "blood_type": "0",
+                    "phone_number": "2147483647",
+                    "device_agent": "",
+                    "status": "1"
+                }
+            }
         },
         {
             "user_id": "2",
             "donation_value": "40.00",
-            "date": "2020-09-05 18:55:11"
+            "date": "2020-09-05 18:55:11",
+            "0": {
+                "user_info": {
+                    "name": "sercann",
+                    "surname": "argaaa",
+                    "blood_type": "0",
+                    "phone_number": "2147483647",
+                    "device_agent": "",
+                    "status": "1"
+                }
+            }
         },
         {
             "user_id": "1",
             "donation_value": "20.00",
-            "date": "2020-09-05 13:53:34"
+            "date": "2020-09-05 13:53:34",
+            "0": {
+                "user_info": {
+                    "name": "asdasdas",
+                    "surname": "asdasdas",
+                    "blood_type": "0",
+                    "phone_number": "111111",
+                    "device_agent": "",
+                    "status": "1"
+                }
+            }
         }
     ]
 }
