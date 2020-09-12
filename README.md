@@ -208,3 +208,26 @@ curl --location --request GET 'http://api.kanverhayatver.org/last_donations' \
     ]
 }
 ```
+### POST - Kan Talebinde Bulunma
+Kullanıcı kan talebi oluşturmak isterse bunu `/donation_request/{user_id}` bağlantısı kullanarak yapmalısınız.
+```curl
+curl --location --request POST 'https://api.kanverhayatver.org/donation_request/1' \
+--header 'Api-Secret-Key: 1111' \
+--form 'blood_type=2' \
+--form 'location=Konum' \
+--form 'hospital=Hastane Adı'
+```
+##### Çıktı:
+```json
+{
+    "status": 1,
+    "msg": "Donation request created"
+}
+```
+##### Kullanıcı Yoksa:
+```json
+{
+    "status": 0,
+    "msg": "User not exists"
+}
+```
