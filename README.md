@@ -6,7 +6,7 @@ Kan Ver Hayat Ver API hizmetini kullanabilmek için `Api-Secret-Key` header bilg
 curl --location --request GET 'https://api.kanverhayatver.org/check_device/1' \
 --header 'Api-Secret-Key: 1111'
 ```
-#### GET - Kullanıcı Kayıt Doğrulama
+### GET - Kullanıcı Kayıt Doğrulama
 Kullanıcı uygulamayı indirdiğinde `/check_device/{device_id}` bağlantısına ``device_id``
 gönderilerek eğer daha önce kayıt olmuşsa kullanıcıya ilişkin detaylı bilgiler json formatında cevap olarak döndürülür.
 ##### Örnek:
