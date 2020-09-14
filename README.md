@@ -134,75 +134,65 @@ curl --location --request GET 'http://api.kanverhayatver.org/last_donations' \
             "user_id": "1",
             "donation_value": "120.00",
             "date": "2020-09-05 18:55:32",
-            "0": {
-                "user_info": {
-                    "name": "asdasdas",
-                    "surname": "asdasdas",
-                    "blood_type": "0",
-                    "phone_number": "111111",
-                    "device_agent": "",
-                    "status": "1"
-                }
+            "user_data": {
+                "name": "asdasdas",
+                "surname": "asdasdas",
+                "blood_type": "0",
+                "phone_number": "111111",
+                "device_agent": "",
+                "status": "1"
             }
         },
         {
             "user_id": "3",
             "donation_value": "80.00",
             "date": "2020-09-05 18:55:21",
-            "0": {
-                "user_info": {
-                    "name": "sercann",
-                    "surname": "argaaa",
-                    "blood_type": "0",
-                    "phone_number": "2147483647",
-                    "device_agent": "",
-                    "status": "1"
-                }
+            "user_data": {
+                "name": "sercann",
+                "surname": "argaaa",
+                "blood_type": "0",
+                "phone_number": "2147483647",
+                "device_agent": "",
+                "status": "1"
             }
         },
         {
             "user_id": "3",
             "donation_value": "40.00",
             "date": "2020-09-05 18:55:16",
-            "0": {
-                "user_info": {
-                    "name": "sercann",
-                    "surname": "argaaa",
-                    "blood_type": "0",
-                    "phone_number": "2147483647",
-                    "device_agent": "",
-                    "status": "1"
-                }
+            "user_data": {
+                "name": "sercann",
+                "surname": "argaaa",
+                "blood_type": "0",
+                "phone_number": "2147483647",
+                "device_agent": "",
+                "status": "1"
             }
         },
         {
             "user_id": "2",
             "donation_value": "40.00",
             "date": "2020-09-05 18:55:11",
-            "0": {
-                "user_info": {
-                    "name": "sercann",
-                    "surname": "argaaa",
-                    "blood_type": "0",
-                    "phone_number": "2147483647",
-                    "device_agent": "",
-                    "status": "1"
-                }
+            "user_data": {
+                "name": "sercann",
+                "surname": "argaaa",
+                "blood_type": "0",
+                "phone_number": "2147483647",
+                "device_agent": "",
+                "status": "1"
             }
         },
         {
             "user_id": "1",
             "donation_value": "20.00",
             "date": "2020-09-05 13:53:34",
-            "0": {
-                "user_info": {
-                    "name": "asdasdas",
-                    "surname": "asdasdas",
-                    "blood_type": "0",
-                    "phone_number": "111111",
-                    "device_agent": "",
-                    "status": "1"
-                }
+            "user_data": {
+                "name": "asdasdas",
+                "surname": "asdasdas",
+                "blood_type": "0",
+                "phone_number": "111111",
+                "device_agent": "",
+                "status": "1"
             }
         }
     ]
@@ -229,5 +219,47 @@ curl --location --request POST 'https://api.kanverhayatver.org/donation_request/
 {
     "status": 0,
     "msg": "User not exists"
+}
+```
+### GET - Top List
+En fazla bağış yapan ve en fazla kan bağışı yapan kişileri listelemek için  `/donation_request/{list}/{count}` bağlantısını kullanmanız gerekir.
+`{list}` değeri blood veya money olabilir. `{count}` için en büyük değer 200 olabilir.
+
+```curl
+curl --location --request GET 'https://api.kanverhayatver.org/top/blood/25' \
+--header 'Api-Secret-Key: 1111' \
+```
+##### Örnek:
+```json
+{
+    "status": 1,
+    "data": [
+        {
+            "user_id": "1",
+            "request_count": "3",
+            "date": "2020-09-14 19:40:00",
+            "user_data": {
+                "name": "asdasdas",
+                "surname": "asdasdas",
+                "blood_type": "0",
+                "phone_number": "111111",
+                "device_agent": "",
+                "status": "1"
+            }
+        },
+        {
+            "user_id": "2",
+            "request_count": "1",
+            "date": "2020-09-14 19:41:27",
+            "user_data": {
+                "name": "sercann",
+                "surname": "argaaa",
+                "blood_type": "0",
+                "phone_number": "2147483647",
+                "device_agent": "",
+                "status": "1"
+            }
+        }
+    ]
 }
 ```
