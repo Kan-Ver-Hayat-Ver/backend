@@ -120,7 +120,7 @@ curl --location --request POST 'https://api.kanverhayatver.org/update_photo/1' \
 }
 ```
 ### GET - Profil Resmi Çekme
-Kullanıcının profil resmini çekmek için `get_photo{user_id}` bağlantısını kullanmalısınız.
+Kullanıcının profil resmini çekmek için `get_photo/{user_id}` bağlantısını kullanmalısınız.
 ```curl
 curl --location --request GET 'https://api.kanverhayatver.org/get_photo/1' \
 --header 'Api-Secret-Key: 1111' \
