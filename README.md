@@ -97,6 +97,47 @@ curl --location --request POST 'https://api.kanverhayatver.org/register_details/
     "msg": "User not exists"
 }
 ```
+### POST - Profil Resmi Yükleme & Güncelleme
+Kullanıcının profil resmini güncellemek isterseniz `update_photo/{user_id}` bağlantısını kullanmalısınız.
+Kabul edilen formatlar: *PNG, JPG, JPEG*
+```curl
+curl --location --request POST 'https://api.kanverhayatver.org/update_photo/1' \
+--header 'Api-Secret-Key: 1111' \
+--form 'photo=@/C:/Users/PC/Desktop/dosya_adi.jpg'
+```
+##### Çıktı:
+```json
+{
+    "status": 1,
+    "data": "https://kanverhayatver.org/api/user_photos/a887d751730d43ce948a42306fe0af1d4cf616f24b607d06a435fa27819b5203.jpg"
+}
+```
+##### Kullanıcı Yoksa:
+```json
+{
+    "status": 0,
+    "msg": "User not exists"
+}
+```
+### GET - Profil Resmi Çekme
+Kullanıcının profil resmini çekmek için `get_photo{user_id}` bağlantısını kullanmalısınız.
+```curl
+curl --location --request GET 'https://api.kanverhayatver.org/get_photo/1' \
+--header 'Api-Secret-Key: 1111' \
+```
+##### Örnek:
+```json
+{
+    "status": 1,
+    "data": "https://kanverhayatver.org/api/user_photos/a887d751730d43ce948a42306fe0af1d4cf616f24b607d06a435fa27819b5203.jpg"
+}
+```
+##### Kullanıcı Yoksa:
+```json
+{
+    "status": 0,
+    "msg": "User not exists"
+}
 ### POST - Bağış Oluşturma
 Kullanıcı bağış yaptığında bunu kaydetmek için `/donate_register/{user_id}` bağlantısı kullanılmalıdır.
 ```curl
@@ -224,7 +265,6 @@ curl --location --request POST 'https://api.kanverhayatver.org/donation_request/
 ### GET - Top List
 En fazla bağış yapan ve en fazla kan bağışı yapan kişileri listelemek için  `/donation_request/{list}/{count}` bağlantısını kullanmanız gerekir.
 `{list}` değeri blood veya money olabilir. `{count}` için en büyük değer 200 olabilir.
-
 ```curl
 curl --location --request GET 'https://api.kanverhayatver.org/top/blood/25' \
 --header 'Api-Secret-Key: 1111' \
