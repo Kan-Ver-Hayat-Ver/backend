@@ -138,6 +138,7 @@ curl --location --request GET 'https://api.kanverhayatver.org/get_photo/1' \
     "status": 0,
     "msg": "User not exists"
 }
+```
 ### POST - Bağış Oluşturma
 Kullanıcı bağış yaptığında bunu kaydetmek için `/donate_register/{user_id}` bağlantısı kullanılmalıdır.
 ```curl
